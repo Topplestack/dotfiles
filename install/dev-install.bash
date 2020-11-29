@@ -34,7 +34,6 @@ select yn in "Yes" "No"; do
     esac
 done
 
-
 tput setaf 2; echo "Do you want to install node.js and tools"; tput sgr0
 select yn in "Yes" "No"; do
     case $yn in
@@ -75,22 +74,26 @@ select yn in "Yes" "No"; do
     esac
 done
 
-
 tput setaf 2; echo "Do you want to install VirtualBox"; tput sgr0
 select yn in "Yes" "No"; do
     case $yn in
         Yes )
-            wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
-            wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
-
-            sudo sh -c 'echo "deb http://download.virtualbox.org/virtualbox/debian disco contrib" >> /etc/apt/sources.list.d/virtualbox.org.list'
-            sudo apt update -qq
             sudo apt install -y virtualbox
             break;;
         No ) break;;
     esac
 done
 
+tput setaf 2; echo "Do you want to install Vagrant and tools"; tput sgr0
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes )
+            sudo apt install -y vagrant
+            sudo apt install -y ansible
+            break;;
+        No ) break;;
+    esac
+done
 
 tput setaf 2; echo "Do you want to install PHP7 and composer"; tput sgr0
 select yn in "Yes" "No"; do
@@ -114,7 +117,6 @@ select yn in "Yes" "No"; do
     esac
 done
 
-
 tput setaf 2; echo "Do you want to install nginx"; tput sgr0
 select yn in "Yes" "No"; do
     case $yn in
@@ -124,7 +126,6 @@ select yn in "Yes" "No"; do
         No ) break;;
     esac
 done
-
 
 tput setaf 2; echo "Do you want install MariaDB"; tput sgr0
 select yn in "Yes" "No"; do
@@ -136,7 +137,6 @@ select yn in "Yes" "No"; do
         No ) break;;
     esac
 done
-
 
 tput setaf 2; echo "Do you want install Java 8,9 and tools"; tput sgr0
 select yn in "Yes" "No"; do
@@ -150,22 +150,6 @@ select yn in "Yes" "No"; do
             sudo apt install -y maven
             sudo apt install -y gradle
             sudo apt install -y ant
-            break;;
-        No ) break;;
-    esac
-done
-
-
-tput setaf 2; echo "Do you want install Scala and sbt"; tput sgr0
-tput setaf 3; echo "Assume that Java is installed"; tput sgr0
-select yn in "Yes" "No"; do
-    case $yn in
-        Yes )
-            sudo apt install -y scala
-            echo "deb https://dl.bintray.com/sbt/debian /" | sudo tee -a /etc/apt/sources.list.d/sbt.list
-            sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2EE0EA64E40A89B84B2DF73499E82A75642AC823
-            sudo apt update -qq
-            sudo apt install -y sbt
             break;;
         No ) break;;
     esac
@@ -190,65 +174,13 @@ select yn in "Yes" "No"; do
     esac
 done
 
-
-
-tput setaf 2; echo "Do you want install Terraform and tfenv"; tput sgr0
-select yn in "Yes" "No"; do
-    case $yn in
-        Yes )
-            git clone https://github.com/tfutils/tfenv.git ~/.tfenv
-
-            export PATH="$HOME/.tfenv/bin:$PATH"
-
-            tfenv install latest
-            break;;
-        No ) break;;
-    esac
-done
-
-
-tput setaf 2; echo "Do you want to install nix"; tput sgr0
-select yn in "Yes" "No"; do
-    case $yn in
-        Yes )
-            curl https://nixos.org/nix/install | sh
-            break;;
-        No ) break;;
-    esac
-done
-
-
 tput setaf 2; echo "Do you want to install docker"; tput sgr0
 select yn in "Yes" "No"; do
     case $yn in
         Yes )
-            curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-            sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu disco stable"
-            sudo apt update -qq
-            sudo apt install docker-ce docker-ce-cli containerd.io
-
-            sudo groupadd docker
-            sudo usermod -aG docker "$USER"
-            sudo newgrp docker
+            sudo apt install -y docker.io
             break;;
         No ) break;;
     esac
 done
 
-
-tput setaf 2; echo "Do you want to Android Studio"; tput sgr0
-select yn in "Yes" "No"; do
-    case $yn in
-        Yes )
-            sudo apt install -y qemu-kvm
-            sudo apt install -y libvirt-bin
-            sudo apt install -y ubuntu-vm-builder
-            sudo apt install -y bridge-utils
-
-            sudo adduser "$USER" kvm
-
-            sudo snap install android-studio --classic
-            break;;
-        No ) break;;
-    esac
-done

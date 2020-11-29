@@ -5,6 +5,8 @@ id_rsa*
 *.pub
 .aws
 .bash_history
+.sql
+.sqlz
 
 # Ignore ide configs
 .idea

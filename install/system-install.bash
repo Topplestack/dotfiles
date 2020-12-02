@@ -99,6 +99,19 @@ select yn in "Yes" "No"; do
     esac
 done
 
+tput setaf 2; echo "Do you want to install Krita"; tput sgr0
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes )
+            sudo add-apt-repository ppa:kritalime/ppa
+            sudo apt update
+            sudo apt install -y krita
+            break;;
+        No ) break;;
+    esac
+done
+
+
 tput setaf 2; echo "Do you want to install Gnome Extended Gestures"; tput sgr0
 select yn in "Yes" "No"; do
     case $yn in

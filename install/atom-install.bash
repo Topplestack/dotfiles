@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 tput setaf 2; echo "Install Atom Editor"; tput sgr0
-wget https://atom.io/download/deb
-sudo dpkg -i atom-amd64.deb
-
-apm install sync-settings
+wget -qO - https://packagecloud.io/AtomEditor/atom/gpgkey | sudo apt-key add -
+sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list'
+sudo apt-get update
+sudo apt-get install atom

@@ -24,7 +24,7 @@ sub_system () {
     sudo chmod +x install/system-install.bash
     bash install/system-install.bash
 }
-dev () {
+sub_dev () {
     sudo chmod +x install/dev-install.bash
     bash install/dev-install.bash
 }

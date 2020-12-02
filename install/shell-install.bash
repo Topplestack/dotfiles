@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-tput setaf 2; echo "Install guake Terminal"; tput sgr0
-sudo apt install -y guake
-
 tput setaf 2; echo "Create symlinks"; tput sgr0
 ln -sfv "$(pwd)/etc/bash/.bashrc" ~
 ln -sfv "$(pwd)/etc/readline/.inputrc" ~

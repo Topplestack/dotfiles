@@ -112,16 +112,21 @@ select yn in "Yes" "No"; do
 done
 
 
-tput setaf 2; echo "Do you want to install Gnome Extended Gestures"; tput sgr0
+tput setaf 2; echo "Do you want to install Fusuma (Gestures)"; tput sgr0
 select yn in "Yes" "No"; do
     case $yn in
         Yes )
-            sudo apt install -y libinput-tools
-            git clone https://github.com/mpiannucci/gnome-shell-extended-gestures
-            cp -r gnome-shell-extended-gestures/extendedgestures@mpiannucci.github.com ~/.local/share/gnome-shell/extensions
+            sudo gpasswd -a $USER input
+            newgr input
+            sudo apt-get install libinput-tools
+            sudo apt-get install ruby
+            sudo gem install fusuma
+            sudo apt-get install xdotool
+            gsettings set org.gnome.desktop.peripherals.touchpad send-events enabled
+
             break;;
         No ) break;;
     esac
 done
 
-# doto: add in message about: sudo nano /etc/gdm3/custom.conf 
+# doto: add in message about: sudo nano /etc/gdm3/custom.conf

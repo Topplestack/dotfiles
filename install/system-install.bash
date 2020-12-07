@@ -123,7 +123,8 @@ select yn in "Yes" "No"; do
             sudo gem install fusuma
             sudo apt-get install xdotool
             gsettings set org.gnome.desktop.peripherals.touchpad send-events enabled
-
+            mkdir ~/.config/fusuma
+            cp ~/.dotfiles/etc/config/fusuma/config.yml ~/.config/fusuma/
             break;;
         No ) break;;
     esac

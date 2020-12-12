@@ -71,7 +71,7 @@ tput setaf 2; echo "Do you want to install Steam"; tput sgr0
 select yn in "Yes" "No"; do
     case $yn in
         Yes )
-            sudo apt -y install steam
+            sudo apt install -y steam
             break;;
         No ) break;;
     esac
@@ -118,14 +118,24 @@ select yn in "Yes" "No"; do
         Yes )
             sudo gpasswd -a $USER input
             newgr input
-            sudo apt-get install libinput-tools
-            sudo apt-get install ruby
+            sudo apt install -y libinput-tools
+            sudo apt install -y ruby
             sudo gem install fusuma
-            sudo apt-get install xdotool
+            sudo apt install -y xdotool
             gsettings set org.gnome.desktop.peripherals.touchpad send-events enabled
             mkdir ~/.config/fusuma
             cp ~/.dotfiles/etc/config/fusuma/config.yml ~/.config/fusuma/
             break;;
+        No ) break;;
+    esac
+done
+
+tput setaf 2; echo "Do you want to install OpenWeatherMap Gnome Extension"; tput sgr0
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes )
+          sudo apt install -y gnome-shell-extension-weather
+          break;;
         No ) break;;
     esac
 done

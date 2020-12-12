@@ -46,6 +46,7 @@ sub_all () {
     sub_atom
     sub_vscode
     sub_shell
+    sub_dev
 }
 
 

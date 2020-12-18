@@ -1,6 +1,9 @@
 #!/bin/bash
 
-tput setaf 2; echo "Upgrade Ubuntu"; tput sgr0
+tput setaf 2; echo "Upgrade Setting Wallpaper"; tput sgr0
+gsettings set org.gnome.desktop.background picture-uri "file:///$HOME/.dotfiles/wallpaper.jpg"
+
+tput setaf 2; echo "Upgrade PopOS"; tput sgr0
 sudo add-apt-repository universe
 sudo add-apt-repository multiverse
 sudo add-apt-repository restricted

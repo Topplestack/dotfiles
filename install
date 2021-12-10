@@ -1,0 +1,51 @@
+#!/bin/bash
+
+BIN_NAME="$(basename "$0")"
+COMMAND_NAME=$1
+
+sub_help () {
+    echo "Usage: $BIN_NAME <command>\n"
+    echo "Commands:"
+    echo "   all                Install using all options"
+    echo "   browsers           Install google chrome and in the future other possible browsers"
+    echo "   lando              Install lando and dependencies such as docker and docker-compose"
+    echo "   help               This help message"
+    echo "   vscode             Install  VSCode"
+    
+}
+
+sub_browsers () {
+    sudo chmod +x installers/browsers.bash
+    bash install/browsers.bash
+}
+
+sub_lando () {
+    sudo chmod +x installers/lando.bash
+    bash install/lando.bash
+}
+
+sub_vscode () {
+    sudo chmod +x installers/vscode.bash
+    bash install/vscode.bash
+}
+
+sub_all () {
+    sub_browsers
+    sub_lando
+    sub_vscode
+}
+
+case $COMMAND_NAME in
+    "" | "-h" | "--help")
+        sub_help
+        ;;
+    *)
+        shift
+        "sub_${COMMAND_NAME}" "$@"
+        if [ $? = 127 ]; then
+            echo "'$COMMAND_NAME' is not a known command or has errors." >&2
+            sub_help
+            exit 1
+        fi
+        ;;
+esac

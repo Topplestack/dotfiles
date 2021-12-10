@@ -10,8 +10,8 @@ sub_help () {
     echo "   browsers           Install google chrome and in the future other possible browsers"
     echo "   lando              Install lando and dependencies such as docker and docker-compose"
     echo "   help               This help message"
+    echo "   teams              Install Microsoft Teams"
     echo "   vscode             Install  VSCode"
-    
 }
 
 sub_browsers () {
@@ -22,6 +22,11 @@ sub_browsers () {
 sub_lando () {
     sudo chmod +x installers/lando.bash
     bash install/lando.bash
+}
+
+sub_teams () {
+    sudo chmod +x installers/teams.bash
+    bash install/teams.bash
 }
 
 sub_vscode () {

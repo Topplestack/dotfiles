@@ -16,22 +16,22 @@ sub_help () {
 
 sub_browsers () {
     sudo chmod +x installers/browsers.bash
-    bash install/browsers.bash
+    bash installers/browsers.bash
 }
 
 sub_lando () {
     sudo chmod +x installers/lando.bash
-    bash install/lando.bash
+    bash installers/lando.bash
 }
 
 sub_teams () {
     sudo chmod +x installers/teams.bash
-    bash install/teams.bash
+    bash installers/teams.bash
 }
 
 sub_vscode () {
     sudo chmod +x installers/vscode.bash
-    bash install/vscode.bash
+    bash installers/vscode.bash
 }
 
 sub_all () {

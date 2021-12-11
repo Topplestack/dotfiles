@@ -37,6 +37,7 @@ sub_vscode () {
 sub_all () {
     sub_browsers
     sub_lando
+    sub_teams
     sub_vscode
 }
 

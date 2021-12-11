@@ -14,7 +14,7 @@ These dotfiles project aim to provide a faster way to setup Ubuntu 21.04 only
 On fresh PopOS instalation:
 
 ```sh
- git clone https://github.com/bfjesset/dotfiles.git .dotfiles
+ git clone https://github.com/jessetbf/ubuntu-dotfiles.git .dotfiles
  cd ~/.dotfiles
  sudo chmod +x install
  ./install

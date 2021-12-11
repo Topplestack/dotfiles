@@ -10,7 +10,9 @@ sub_help () {
     echo "   browsers           Install google chrome and in the future other possible browsers"
     echo "   lando              Install lando and dependencies such as docker and docker-compose"
     echo "   help               This help message"
+    echo "   prey               Install Prey - a find my device application for Linux"
     echo "   teams              Install Microsoft Teams"
+    echo "   terminus           Install Pantheon Terminus"
     echo "   vscode             Install  VSCode"
 }
 
@@ -24,9 +26,19 @@ sub_lando () {
     bash installers/lando.bash
 }
 
+sub_prey () {
+    sudo chmod +x installers/prey.bash
+    bash installers/prey.bash
+}
+
 sub_teams () {
     sudo chmod +x installers/teams.bash
     bash installers/teams.bash
+}
+
+sub_terminus () {
+    sudo chmod +x installers/terminus.bash
+    bash installers/terminus.bash
 }
 
 sub_vscode () {
@@ -35,10 +47,14 @@ sub_vscode () {
 }
 
 sub_all () {
+    sudo apt update
+    sudo apt upgrade
     sub_browsers
     sub_lando
     sub_teams
+    sub_terminus
     sub_vscode
+    sub_prey
 }
 
 case $COMMAND_NAME in

@@ -29,8 +29,8 @@ sub_lando () {
 }
 
 sub_gitkraken () {
-    sudo chmod +x installers/gitgraken.bash
-    bash installers/gitgraken.bash
+    sudo chmod +x installers/gitkraken.bash
+    bash installers/gitkraken.bash
 }
 
 sub_prey () {

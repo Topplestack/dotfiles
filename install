@@ -28,7 +28,7 @@ sub_lando () {
     bash installers/lando.bash
 }
 
-sub_gitgraken () {
+sub_gitkraken () {
     sudo chmod +x installers/gitgraken.bash
     bash installers/gitgraken.bash
 }

@@ -10,4 +10,15 @@ read -p "Do you want to install Google Chrome? y/n: " yn
             break ;;
         [Nn]* ) exit;;
     esac
+donev
+
+while true; do
+read -p "Do you want to reinstall Firefox? y/n: " yn
+    case $yn in
+        [Yy]* )
+            sudo snap remove firefox
+            sudo apt install firefox
+            break ;;
+        [Nn]* ) exit;;
+    esac
 done

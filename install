@@ -8,10 +8,12 @@ sub_help () {
     echo "Commands:"
     echo "   all                Install using all options"
     echo "   browsers           Install google chrome and in the future other possible browsers"
+    echo "   gitkraken          Install gitkraken"
     echo "   lando              Install lando and dependencies such as docker and docker-compose"
     echo "   help               This help message"
+    echo "   utils              Install mysqlworkbench and other developer utilities"
     echo "   prey               Install Prey - a find my device application for Linux"
-    echo "   teams              Install Microsoft Teams"
+    echo "   conf               Install Video Converencing apps such as Teams, Slack, and Zoom"
     echo "   terminus           Install Pantheon Terminus"
     echo "   vscode             Install  VSCode"
 }
@@ -26,19 +28,29 @@ sub_lando () {
     bash installers/lando.bash
 }
 
+sub_gitgraken () {
+    sudo chmod +x installers/gitgraken.bash
+    bash installers/gitgraken.bash
+}
+
 sub_prey () {
     sudo chmod +x installers/prey.bash
     bash installers/prey.bash
 }
 
-sub_teams () {
-    sudo chmod +x installers/teams.bash
-    bash installers/teams.bash
+sub_conf () {
+    sudo chmod +x installers/conf.bash
+    bash installers/conf.bash
 }
 
 sub_terminus () {
     sudo chmod +x installers/terminus.bash
     bash installers/terminus.bash
+}
+
+sub_utils () {
+    sudo chmod +x installers/utils.bash
+    bash installers/utils.bash
 }
 
 sub_vscode () {
@@ -51,8 +63,10 @@ sub_all () {
     sudo apt upgrade
     sub_browsers
     sub_lando
-    sub_teams
+    sub_conf
+    sub_gitgraken
     sub_terminus
+    sud_utils
     sub_vscode
     sub_prey
 }

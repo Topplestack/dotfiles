@@ -10,7 +10,7 @@ read -p "Do you want to install Google Chrome? y/n: " yn
             break ;;
         [Nn]* ) exit;;
     esac
-donev
+done
 
 while true; do
 read -p "Do you want to reinstall Firefox? y/n: " yn

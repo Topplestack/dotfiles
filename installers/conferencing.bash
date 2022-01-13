@@ -14,15 +14,16 @@ read -p "Do you want to install Microsoft Teams Preview? y/n: " yn
     esac
 done
 
-while true; do
-read -p "Do you want to install Slack? y/n: " yn
-    case $yn in
-        [Yy]* )
-            sudo apt install slack
-            break ;;
-        [Nn]* ) exit;;
-    esac
-done
+#
+#while true; do
+#read -p "Do you want to install Slack? y/n: " yn
+#    case $yn in
+#        [Yy]* )
+#            sudo apt install slack
+#            break ;;
+#        [Nn]* ) exit;;
+#    esac
+#done
 
 while true; do
 read -p "Do you want to install Zoom? y/n: " yn

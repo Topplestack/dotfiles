@@ -1,7 +1,7 @@
 #!/bin/bash
 
 while true; do
-read -p "Do you want to install Microsoft Teams Preview? y/n: " yn
+read -p "Do you want to install Gitkraken? y/n: " yn
     case $yn in
         [Yy]* )
             wget https://release.gitkraken.com/linux/gitkraken-amd64.deb

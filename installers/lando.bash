@@ -31,9 +31,9 @@ while true; do
 read -p "Do you want to install Lando? y/n: " yn
     case $yn in
         [Yy]* )
-            wget https://files.devwithlando.io/lando-stable.deb
-            sudo dpkg -i lando-stable.deb
-            rm lando-stable.deb
+            wget https://files.devwithlando.io/lando-latest.deb
+            sudo dpkg -i lando-latest.deb
+            rm lando-latest.deb
             break;;
         [Nn]* ) break;;
     esac

@@ -1,8 +1,5 @@
 #!/bin/bash
 
-ln -s ~/.dotfiles/.bashrc .bashrc
-source ~/.bashrc
-
 # remove gnome bundled games
 sudo apt purge iagno lightsoff four-in-a-row gnome-robots pegsolitaire gnome-2048 hitori gnome-klotski gnome-mines gnome-mahjongg gnome-sudoku quadrapassel swell-foop gnome-tetravex gnome-taquin aisleriot tali && sudo apt autoremove
 

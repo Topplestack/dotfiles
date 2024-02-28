@@ -115,3 +115,7 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+if [ -f ~/.dotfiles/.aliases ]; then
+    . ~/.dotfiles/.aliases
+fi

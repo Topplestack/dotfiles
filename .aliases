@@ -1,0 +1,6 @@
+alias drush='lando drush'
+alias composer='lando composer'
+alias gulp='lando gulp'
+alias watch='lando gulp watch'
+
+alias kmsa='code ~/Projects/kmsa'
